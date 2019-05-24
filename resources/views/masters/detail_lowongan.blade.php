@@ -29,34 +29,34 @@
                             <a href="{{ route('register') }}"  class='btn btn-primary' style="float: right;">Daftar</a>
                         @else
 
-                        @if ( Auth::User()->hasRole('User') )
-                            @forelse ($lowongan_users as $lowongan_user)
-                                @if (Auth::user()->user_details)
-                                    @if ($lowongan->id == $lowongan_user->lowongan_id && Auth::user()->id == $lowongan_user->user_id)
-                                        <button class="btn btn-primary" style="float: right" disabled>APPLIED</button>
+                            @if ( Auth::User()->hasRole('User') )
+                                @forelse ($lowongan_users as $lowongan_user)
+                                    @if (Auth::user()->user_details)
+                                        @if ($lowongan->id == $lowongan_user->lowongan_id && Auth::user()->id == $lowongan_user->user_id)
+                                            <button class="btn btn-primary" style="float: right" disabled>APPLIED</button>
+                                        @else
+                                            <form action="{{route('lowongan_user.store')}}" method="POST">
+                                                {{ csrf_field() }}
+                                            
+                                                <input type="hidden" name="id" value="{{$lowongan->id}}">
+                                                <button type="submit" class="btn btn-primary" style="float: right">APPLY</button>
+                                            </form>
+                                        @endif
                                     @else
-                                        <form action="{{route('lowongan_user.store')}}" method="POST">
-                                            {{ csrf_field() }}
-                                        
-                                            <input type="hidden" name="id" value="{{$lowongan->id}}">
-                                            <button type="submit" class="btn btn-primary" style="float: right">APPLY</button>
-                                        </form>
+                                        <a  href="{{route('user_detail.create')}}"><button class="btn btn-primary" style="float: right">Isi Profil</button></a>
                                     @endif
-                                @else
-                                    <a  href="{{route('user_detail.create')}}"><button class="btn btn-primary" style="float: right">Isi Profil</button></a>
-                                @endif
+                                    
+                                @empty
                                 
-                            @empty
-                            
-                            <form action="{{route('lowongan_user.store')}}" method="POST">
-                            {{ csrf_field() }}
-                            
-                                <input type="hidden" name="id" value="{{$lowongan->id}}">
-                                <button type="submit" class="btn btn-primary" style="float: right">APPLY</button>
-                            </form>
-                            
-                            @endforelse
-                        @endif
+                                <form action="{{route('lowongan_user.store')}}" method="POST">
+                                {{ csrf_field() }}
+                                
+                                    <input type="hidden" name="id" value="{{$lowongan->id}}">
+                                    <button type="submit" class="btn btn-primary" style="float: right">APPLY</button>
+                                </form>
+                                
+                                @endforelse
+                            @endif
                         @endguest
 
                     </blockquote>

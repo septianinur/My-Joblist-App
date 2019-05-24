@@ -64,10 +64,6 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        // Check if it fails //
-        if( $validation->fails() ){
-            return redirect()->back()->withInput()->with('errors', $validation->errors() );
-        }
             $user = User::create([
                 'name' => $data['name'],
                 'email' => $data['email'],
