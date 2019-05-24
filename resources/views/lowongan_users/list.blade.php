@@ -29,7 +29,7 @@
                                 @if ($user->id == $detail->user_id)
                                     <tr>
                                         <td>{!!$user->name!!}</td>
-                                        <td><a href=" {{$detail->cv_path}} ">Download</a></td>
+                                        <td><a href=" {{$detail->cv_path}} ">Download CV</a></td>
                                         @if ($lowongan_user->status_cv == 'Unread')
                                             <td>
                                                 <form action=" {{route('lowongan_user.update', $lowongan_user->id)}} " method="POST">
@@ -41,9 +41,17 @@
                                             </td>
                                         @else
                                             <td>
-                                                {{$lowongan_user->status_cv }}
-                                            </td>
-                                        @endif
+                                                @if ($lowongan_user->status_cv == 'unread')
+                                                    <td><span class="badge badge-primary">Unread</span></td>
+                                                @endif
+                                                @if ($lowongan_user->status_cv == 'accept')
+                                                    <td><span class="badge badge-info">Accept</span></td>
+                                                @endif
+                                                @if ($lowongan_user->status_cv == 'reject')
+                                                    <td><span class="badge badge-danger">Reject</span></td>
+                                                @endif
+                                                    </td>
+                                                @endif
                                         
                                         <td>
                                     </tr>

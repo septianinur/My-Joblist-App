@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use App\User;
 use App\UserDetail;
 use App\Lowongan;
@@ -13,7 +14,7 @@ class AdminController extends Controller
 {
     public function listUser()
     {
-        $user = User::all();
+        $user = User::where('id', '<>',Auth::user()->id)->get();
         $user_detail = UserDetail::all();
         return view('masters.daftar_user')->with('users', $user)->with('user_details', $user_detail);
     }

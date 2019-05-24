@@ -20,15 +20,22 @@ class UserDetailController extends Controller
      */
     public function index()
     {
-        $id = Auth::user()->id;
-        $lowongan = Lowongan::all();
-        $posisi = Posisi::all();
-        $lowongan_user = LowonganUser::all();
-        $user = User::find($id);
-        $user_detail = Auth::user()->user_details()->get();
+        $user = Auth::user()->user_details;
+
+        if (!$user) {
+            return redirect('user_detail/create');
+        } else {
+            $id = Auth::user()->id;
+            $lowongan = Lowongan::all();
+            $posisi = Posisi::all();
+            $lowongan_user = LowonganUser::all();
+            $user = User::find($id);
+            $user_detail = Auth::user()->user_details()->get();
+            
+            // dd($user_detail);
+            return view('users.index')->with('user_detail', $user_detail)->with('lowongans', $lowongan)->with('posisis', $posisi)->with('lowongan_users', $lowongan_user)->with('users', $user);
+        }
         
-        // dd($user_detail);
-        return view('users.index')->with('user_detail', $user_detail)->with('lowongans', $lowongan)->with('posisis', $posisi)->with('lowongan_users', $lowongan_user)->with('users', $user);
     }
 
     /**

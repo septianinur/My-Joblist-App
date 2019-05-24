@@ -2,12 +2,13 @@
 
 @section('content')
     <div class="jumbotron">
-        <h1 class="display-3">Hello, world!</h1>
-        <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+        <h1 class="display-3">Cari Lowongan Kerja !</h1>
+        <p class="lead">"Orang sering bertanya kepada saya, bagaimana caranya mewujudkan impian.</p>
+        <p class="lead">saya, cara mewujudkan impian adalah dengan bekerja" - <strong>Walt Disney</strong></p>
         <hr class="my-4">
-        <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+        <p>Daftar dan lengkapi profil anda untuk melamar pekerjaan dengan mudah.</p>
         <p class="lead">
-            <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+        <a class="btn btn-primary btn-lg" href="{{route('register')}}" role="button">Daftar Sekarang</a>
         </p>
     </div>
     <div class="container" >

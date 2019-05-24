@@ -3,7 +3,7 @@
 <html lang="en">
   <head>
     {{-- <link rel="icon" href="../../favicon.ico"> --}}
-    <title>@yield('title')</title>
+    <title>My Joblist App</title>
     <!-- Bootstrap core CSS -->
     <link href="{{asset('css/bootstrap.min.css')}}" rel="stylesheet">
     <!-- Custom styles for this template -->

@@ -11,7 +11,7 @@
     <link rel="stylesheet" href=" {{asset('assets/vendor/fonts/fontawesome/css/fontawesome-all.css')}}">
     <link rel="stylesheet" href=" {{asset('assets/vendor/bootstrap/css/bootstrap.min.css')}}">
     <link rel="stylesheet" href=" {{asset('assets/vendor/inputmask/css/inputmask.css')}}">
-    <title>Concept - Bootstrap 4 Admin Dashboard Template</title>
+    <title>My Joblist App | Dashboard Admin</title>
 </head>
 
 <body>
@@ -33,14 +33,7 @@
                     <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                         <div class="page-header">
                             <h2 class="pageheader-title">Dashboard</h2>
-                            <div class="page-breadcrumb">
-                                <nav aria-label="breadcrumb">
-                                    <ol class="breadcrumb">
-                                        <li class="breadcrumb-item"><a href="#" class="breadcrumb-link">Dashboard</a></li>
-                                        <li class="breadcrumb-item active" aria-current="page">E-Commerce Dashboard Template</li>
-                                    </ol>
-                                </nav>
-                            </div>
+                            <hr>
                         </div>
                     </div>
                 </div>

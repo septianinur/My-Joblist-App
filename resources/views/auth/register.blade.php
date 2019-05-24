@@ -16,6 +16,7 @@
                             <div class="col-sm-9">
                                 <input id="name" type="text" class="form-control" name="name" required autofocus>
                             </div>
+                            <div class="text-danger">{{ $errors->first('name') }}</div>
                         </div>
 
                         <div class="form-group row">
@@ -23,13 +24,15 @@
                             <div class="col-sm-9">
                                 <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required>
                             </div>
+                            <div class="text-danger">{{ $errors->first('email') }}</div>
                         </div>
 
                         <div class="form-group row">
-                            <label for="tanggal_lahir" class="col-sm-3 col-form-label">Tanggal Lahir</label>
+                            <label for="tanggal_lahir" class="col-sm-3 col-form-label">Tanggal Lahir (min. 17 th)</label>
                             <div class="col-sm-9">
                                 <input id="tanggal_lahir" type="date" class="form-control" name="tanggal_lahir" required >
                             </div>
+                            <div class="text-danger">{{ $errors->first('tanggal_lahir') }}</div>
                         </div>
 
                         <div class="form-group row">
@@ -37,6 +40,7 @@
                             <div class="col-sm-9">
                                 <input id="password" type="password" class="form-control" name="password" required>
                             </div>
+                            <div class="text-danger">{{ $errors->first('password') }}</div>
                         </div>
 
                         <div class="form-group row">
@@ -44,6 +48,7 @@
                             <div class="col-sm-9">
                                 <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
                             </div>
+                            <div class="text-danger">{{ $errors->first('password_confirmation') }}</div>
                         </div>
 
                         <div class="form-group">

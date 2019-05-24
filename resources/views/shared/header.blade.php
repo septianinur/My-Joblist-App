@@ -9,10 +9,10 @@
 			</li>
 		@guest
             <li class="nav-item">
-				<a href="{{ route('login') }}" class="nav-link">Login</a>
+				<a href="{{ route('login') }}" class="nav-link">Masuk</a>
 			</li>
             <li class="nav-item">
-				<a href="{{ route('register') }}" class="nav-link">Register</a>
+				<a href="{{ route('register') }}" class="nav-link">Daftar</a>
 			</li>
 		@else
 		@if ( Auth::User()->hasRole('User') )

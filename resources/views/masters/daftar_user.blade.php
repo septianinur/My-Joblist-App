@@ -9,8 +9,8 @@
                     <tr>
                         <th>Nama</th>
                         <th>E-Mail</th>
-                        <th>No. Telepon</th>
-                        <th>Isi Profil</th>
+                        {{-- <th>No. Telepon</th>
+                        <th>Isi Profil</th> --}}
                     </tr>
                 </thead>
                 <tbody>
@@ -18,15 +18,15 @@
                 <tr>
                     <td>{!!$user->name!!}</td>
                     <td>{!!$user->email!!}</td>
-                    @foreach ($user_details as $detail)
-                        @if ($user->id == $detail->user_id)
+                    {{-- @foreach ($user_details as $detail)
+                        @if ($detail->user_id == $user->id)
                             <td>{!!$detail->no_telp!!}</td>
                             <td>Completed</td>
                         @else
                             <td>-</td>
                             <td>Belum Isi</td>
                         @endif
-                    @endforeach
+                    @endforeach --}}
                 </tr>
             @endforeach
                 </tbody>

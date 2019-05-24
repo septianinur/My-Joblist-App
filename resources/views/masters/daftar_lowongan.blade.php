@@ -4,6 +4,7 @@
 <div class="container">
     <div class="row">
     @foreach ($lowongans as $lowongan)
+    @if (\carbon\carbon::now() <= $lowongan->deadline)
     <div class="col-md-4" style="margin:2% auto;">
             <div class="card" style="height: 200px;">
                 <div class="card-body">
@@ -19,6 +20,8 @@
               </div>
             </div>
         </div>
+    @endif
+    
     @endforeach
     </div>
 </div>

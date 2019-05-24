@@ -13,16 +13,6 @@ use App\Role;
 
 class MasterController extends Controller
 {
-
-    // public function __construct()
-    // {
-    //     if(Auth::user()->hasRole('User')){
-    //         $user = Auth::user()->user_details;
-    //         if (!$user) {
-    //             return redirect('user_detail/create');
-    //         }
-    //     }
-    // }
     public function listLowongan()
     {
         $lowongans = Lowongan::all();
